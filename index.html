@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
+	<script src="https://kit.fontawesome.com/559e0deb0a.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+	<title>Document</title>
+</head>
+<body style="background-color: #fafafa;">
+	<div class="container" id="app">
+		
+		
+		<header class="rosa-gradient ">
+			<a class="" href="index.html" style="text-decoration: none; color: black">
+				<h1 class="text-center pt-4">Dulces flor 
+
+					<img src="images/logo1.png" width="5%" height="5%" alt="" style="border-radius: 100px;">
+
+				</h1>
+			</a>
+			
+			<nav class="navbar navbar-expand-lg navbar-light rosa-gradient ">
+
+				<button class="navbar-toggler bd-danger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav m-auto">
+						<li class="nav-item active " >
+							<a class="nav-link" href="#" v-on:click="view = 'home'" >Inicio <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" v-on:click="view = 'promo'" >Promos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" v-on:click="view = 'location'" >Mapa</a>
+						</li>
+						<li class="nav-item">
+							<a href="#victorModal" class="nav-link" data-toggle="modal">Deja tu comentario! </a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Y mas ! 
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+            <div class="container">
+                <component :is="view"></component>
+            </div>
+        </main>
+
+
+		<!-- Modal / Ventana / Overlay en HTML -->
+		<div id="victorModal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Comentanos que te parecio</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="nombre">Nombre</label>
+							<input type="text" id="nombre" class="form-control">
+						</div>
+						
+						<div class="form-group">
+							<label for="precio">Email</label>
+							<input type="text" id="precio" class="form-control" >
+						</div>
+						
+						<div class="form-group">
+							<label for="descripcion">Comenta</label>
+							<textarea id="descripcion" class="form-control"> </textarea> 
+						</div>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn btn-success">Enivar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+				<!-- Footer -->
+		<footer class=" col-12 page-footer font-small rosa-gradient">
+
+			<!-- Footer Elements -->
+			<div class="container">
+
+				<!-- Grid row-->
+				<div class="row  text-center">
+
+					<!-- Grid column -->
+					<div class="col-md-12 pb-0 pt-5">
+						<div class="mb-4 flex-center">
+
+							<!-- Facebook -->
+							<a href="https://es-la.facebook.com/dulces.flor.71" target="_blank" class="fb-ic">
+								<i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+							</a>
+							<!--Instagram-->
+							<a href="https://www.instagram.com/dulcesflor1/" target="_blank" class="ins-ic">
+								<i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+							</a>
+						</div>
+					</div>
+					<!-- Grid column -->
+
+				</div>
+				<!-- Grid row-->
+
+			</div>
+			<!-- Footer Elements -->
+
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-2">© 2020 Copyright
+			</div>
+			<!-- Copyright -->
+
+		</footer>
+		<!-- Footer -->		
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/index.js"></script>	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
